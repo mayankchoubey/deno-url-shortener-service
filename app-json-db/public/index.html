@@ -21,7 +21,6 @@
         const res = await fetch(shortenEP, {
             method: 'POST'
         });
-        alert(res);
         const resJson  = await res.json();
         if(res.status === 201) {
             Swal.fire("URL Shortened successfully!",
