@@ -1,6 +1,7 @@
 # A URL Shortener Service in Deno
 
-This is a simple URL Shortener service written in Deno using different types of storage for demonstration.
+This is a simple URL Shortener service written in Deno using different types of
+storage for demonstration.
 
 There are different variants of this app depending on the storage type:
 
@@ -11,7 +12,8 @@ There are different variants of this app depending on the storage type:
 
 ## Domain
 
-The shortened domain defaults to localhost. To use a custom domain, set it in the config file as well as hosts file.
+The shortened domain defaults to localhost. To use a custom domain, set it in
+the config file as well as hosts file.
 
 ```
 > cat /etc/hosts | grep 'de\.no'
