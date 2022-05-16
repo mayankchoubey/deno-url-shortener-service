@@ -1,1 +1,1 @@
-deno run --allow-read=./ --allow-net=de.no:80,:27017 --watch server.ts
+deno run --no-prompt --allow-read=./ --allow-net=de.no:80,:27017 --watch server.ts
