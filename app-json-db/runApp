@@ -1,0 +1,1 @@
+deno run --no-prompt --allow-read=./ --allow-write=./localdb --allow-net=de.no:80 --watch server.ts
