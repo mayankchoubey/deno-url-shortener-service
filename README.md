@@ -25,10 +25,12 @@ To run this app locally:
 - Clone the repo
 - Change the folder according to the DB type
 - Run the deno server application using `./runApp`
-- Open `http://localhost:8000` in the browser
+- Open `http://de.no` in the browser
 
 ## Using shortened URLs
 
 To use shortered URL:
 
 - Open the shortened URL in a browser tab
+
+`http://de.no/abcd1234`
