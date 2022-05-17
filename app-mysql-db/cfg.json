@@ -1,0 +1,11 @@
+{
+  "serverPort": 80,
+  "shortenedDomain": "de.no",
+  "mysql": {
+    "user": "denouser",
+    "password": "denopwd",
+    "host": "127.0.0.1",
+    "port": "3306",
+    "db": "denodb"
+  }
+}
