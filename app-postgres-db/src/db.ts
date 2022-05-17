@@ -19,8 +19,13 @@ export async function getRecord(id: string) {
     `SELECT * FROM ${TABLE_NAME} WHERE ID = $1`,
     [id],
   );
+
   if (result && result.rows && result.rows.length > 0) {
-    return result.rows[0] as ShortenedData;
+    const dbRec = result.rows[0] as any;
+    return {
+      originalUrl: dbRec.original_url,
+      targetUrl: dbRec.target_url
+    }
   }
 }
 
