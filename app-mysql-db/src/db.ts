@@ -1,4 +1,4 @@
-import { configLogger, Client } from "../deps.ts";
+import { Client, configLogger } from "../deps.ts";
 import { printError } from "./utils.ts";
 import cfg from "../cfg.json" assert { type: "json" };
 import { TABLE_NAME } from "./consts.ts";
@@ -24,8 +24,8 @@ export async function getRecord(id: string) {
     const dbRec = result.rows[0] as any;
     return {
       originalUrl: dbRec.original_url,
-      targetUrl: dbRec.target_url
-    }
+      targetUrl: dbRec.target_url,
+    };
   }
 }
 
