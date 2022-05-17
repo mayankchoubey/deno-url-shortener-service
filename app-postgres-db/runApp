@@ -1,0 +1,1 @@
+deno run --allow-read=./ --allow-net=de.no:80,:5432 --no-prompt --watch server.ts
