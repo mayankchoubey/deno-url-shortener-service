@@ -9,29 +9,28 @@ export async function addRecord(id: string, data: any) {
   await dbConn.execute(
     `INSERT INTO ${TABLE_NAME} 
       (ID, ORIGINAL_URL, TARGET_URL) 
-      VALUES ($1, $2, $3)`,
+      VALUES (?, ?, ?)`,
     [id, data.originalUrl, data.targetUrl],
   );
 }
 
 export async function getRecord(id: string) {
-  const result = await dbConn.execute(
-    `SELECT * FROM ${TABLE_NAME} WHERE ID = $1`,
+  const result = await dbConn.query(
+    `SELECT * FROM ${TABLE_NAME} WHERE ID = ?`,
     [id],
   );
-
-  if (result && result.rows && result.rows.length > 0) {
-    const dbRec = result.rows[0] as any;
+  if (result && Array.isArray(result) && result.length > 0) {
+    const dbRec = result[0] as any;
     return {
-      originalUrl: dbRec.original_url,
-      targetUrl: dbRec.target_url,
+      originalUrl: dbRec.ORIGINAL_URL,
+      targetUrl: dbRec.TARGET_URL,
     };
   }
 }
 
 async function checkTables() {
   try {
-    await dbConn.execute(`SELECT * FROM ${TABLE_NAME}`);
+    await dbConn.query(`SELECT * FROM ${TABLE_NAME}`);
   } catch (e) {
     await dbConn.execute(`CREATE TABLE ${TABLE_NAME} (
       ID VARCHAR(10) PRIMARY KEY,
